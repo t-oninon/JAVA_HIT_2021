@@ -32,7 +32,7 @@ public class RunMain {
             }
 
             //Bắn 5 lần rồi nạp đạn
-            System.out.printf("| %-12s | %-15s | %-15s |%n", "Nap", DiepBeDe.shoot(rd.nextInt(10) + 1) , DoanXinhGai.shoot(rd.nextInt(10) + 1));
+            System.out.printf("| %-12s | %-15d | %-15d |%n", "Nap", DiepBeDe.load(rd.nextInt(10) + 1) , DoanXinhGai.load(rd.nextInt(10) + 1));
         }
     }
 }

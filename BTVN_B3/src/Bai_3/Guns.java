@@ -13,8 +13,9 @@ public class Guns {
         this.weaponName = weaponName;
     }
 
-    public void load(int x) {
+    public int load(int x) {
         this.ammoNumber += x;
+        return this.ammoNumber;
     }
 
     public String shoot(int x) {
