@@ -43,7 +43,7 @@ public class RunMain {
         Collections.sort(personLists, new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2) {
-                return o1.compareTo(o2);
+                return o1.getName().compareTo(o2.getName());
             }
         });
         System.out.println("People list after sort desc by name");
