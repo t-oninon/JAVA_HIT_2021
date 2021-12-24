@@ -70,7 +70,7 @@ public class Account {
     }
 
     public void setPassword() {
-        pattern = Pattern.compile("^(?=.*\\w)(?=.*[@$!%*#?&])[\\w@$!%*#?&]{8,}$");
+        pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
         String password = "";
         do {
             System.out.print("Enter password: ");
@@ -90,7 +90,7 @@ public class Account {
     }
 
     public void setEmail() {
-        pattern = Pattern.compile("^[\\w\\.]+@(\\w+\\.)+[\\w]{2,4}$");
+        pattern = Pattern.compile("^[\\w\\.]+@([a-zA-Z]+\\.)+[\\w]{2,4}$");
         String email = "";
         do {
             System.out.print("Enter email: ");
@@ -105,15 +105,14 @@ public class Account {
     }
 
     public void setPhone() {
-        pattern = Pattern.compile("^(\\d{8,})$");
+        pattern = Pattern.compile("^(84|0[3|5|7|8|9])([0-9]{8})$");
         String phone = "";
         do {
             System.out.print("Enter phone number: ");
             phone = RunMain.sc.nextLine();
-            System.out.println(phone);
             matcher = pattern.matcher(phone);
         } while (!matcher.find());
-        this.email = email;
+        this.phone = phone;
     }
 
     public String getCreateAt() {
@@ -130,6 +129,10 @@ public class Account {
                 email, phone, createAt);
     }
 
+    public boolean canLogIn(String userName, String password) {
+        return (this.userName.equals(userName)) && (this.password.equals(password));
+    }
+
     @Override
     public String toString() {
         return String.format("%10d|%20s|%10s|%15s|%20s|%15s|%10s"
@@ -140,6 +143,6 @@ public class Account {
     @Override
     public boolean equals(Object obj) {
         Account account = (Account) obj;
-        return (account.getId() == this.id) && (account.userName == this.userName);
+        return (account.getId() == this.id) && (account.userName.equals(this.userName));
     }
 }
