@@ -1,7 +1,5 @@
 package model;
 
-import data.Base;
-
 public class Lesson {
     private String id;
     private String courseId;
@@ -45,24 +43,18 @@ public class Lesson {
         return content;
     }
 
-    public void setTime(String content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        Lesson lesson = (Lesson) obj;
-        return (lesson.getId() == this.id);
-    }
-
+    // Hàm vào học bài
     public void join(int stt) {
-        System.out.println("\nTrang chủ > ... > Học > Bài số " + stt);
-        System.out.println("              -------------------------------------------------------");
-        System.out.printf("    ,___,     |%3d.   %-45s |\n", stt, name);
-        System.out.printf("    [O.o]  /  |  %-50s |\n","");
-        System.out.printf("    /)__)>/   |  %-50s |\n","");
-        System.out.printf("----\"--\"-     |  %-50s |\n", content);
-        System.out.println("              -------------------------------------------------------");
+        System.out.println("               ╔═════════════════════════════════════════════════════╗");
+        System.out.printf("    ,___,      ║%3d.   %-45s ║\n", stt, name);
+        System.out.printf("    [O.o]  /   ║  %-50s ║\n","");
+        System.out.printf("    /)__)>/    ║  %-50s ║\n","");
+        System.out.printf("-----″--″--    ║  %-50s ║\n", content);
+        System.out.println("               ╚═════════════════════════════════════════════════════╝");
     }
 
     @Override

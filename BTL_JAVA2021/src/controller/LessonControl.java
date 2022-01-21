@@ -1,8 +1,6 @@
 package controller;
 
-import model.Bill;
 import model.Lesson;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;

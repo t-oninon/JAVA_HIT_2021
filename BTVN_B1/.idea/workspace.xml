@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="137cb03a-e853-4c32-9df8-1d89b6afa2f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/.idea/libraries/mssql_jdbc_9_4_1_jre16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/BTL_JAVA2021.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/controller/AccountControl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/controller/AdminControl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/controller/BillControl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/controller/CourseControl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/controller/JDBC.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/controller/LessonControl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/controller/RateControl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/controller/UserControl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/data/Base.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/data/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/data/QLKH.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/model/Account.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/model/Bill.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/model/Course.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/model/Lesson.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/model/Rate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/out/production/BTL_JAVA2021/run/RunMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/controller/AccountControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/controller/AdminControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/controller/BillControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/controller/CourseControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/controller/JDBC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/controller/LessonControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/controller/RateControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/controller/UserControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/data/Base.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/data/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/data/QLKH.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/model/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/model/Bill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/model/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/model/Lesson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/model/Rate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTL_JAVA2021/src/run/RunMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTVN_B2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTVN_B2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTVN_B2/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTVN_B2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BTVN_B2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTVN_B1.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="23rnLAK0bZWxeO1tAA11Zu1uoAK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BTL_JAVA2021" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="137cb03a-e853-4c32-9df8-1d89b6afa2f7" name="Changes" comment="" />
+      <created>1642501015455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642501015455</updated>
+    </task>
+    <servers />
+  </component>
+</project>

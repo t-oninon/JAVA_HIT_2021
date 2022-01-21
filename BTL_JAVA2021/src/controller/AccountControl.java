@@ -3,6 +3,7 @@ package controller;
 import data.Base;
 import data.Constants;
 import model.Account;
+import run.RunMain;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -109,11 +110,17 @@ public class AccountControl {
     public static String requestUserName() {
         String userName;
         while (true) {
-            System.out.print("\tNhập tên người dùng: ");
+            System.out.print("\tNhập tên tài khoản: ");
             userName = Base.sc.nextLine();
-            if (Constants.regexUserName.matcher(userName).find())
+            boolean notBreak = false;
+            if(RunMain.accountJoin.getAdmin() && userName.length() == 0) {
+                System.out.println("Tên tài khoản không được để trống");
+                notBreak = true;
+            }
+            if (Constants.regexUserName.matcher(userName).find() || RunMain.accountJoin.getAdmin() && !notBreak)
                 break;
-            System.out.println("Tên người dùng không dấu, chứa các kí tự hoa, thường, số,\n" +
+            if(!RunMain.accountJoin.getAdmin())
+                System.out.println("Tên tài khoản không dấu, chứa các kí tự hoa, thường, số,\n" +
                     "độ đài 8 - 15 kí tự");
         }
         return userName;
@@ -125,10 +132,18 @@ public class AccountControl {
         while (true) {
             System.out.print("\tNhập mật khẩu: ");
             password = Base.sc.nextLine();
-            if (Constants.regexPassword.matcher(password).find())
+            boolean notBreak = false;
+            if(RunMain.accountJoin.getAdmin() && password.length() == 0) {
+                System.out.println("Mật khẩu không được để trống");
+                notBreak = true;
+            }
+            if (Constants.regexPassword.matcher(password).find() || RunMain.accountJoin.getAdmin() && !notBreak)
                 break;
-            System.out.println("Mật khẩu không dấu, chứa ít nhất 1 chữ hoa, chữ thường, số,\n" +
-                    "kí tự đặc biệt, độ đài 8 - 15 kí tự");
+            if (!RunMain.accountJoin.getAdmin()) {
+                System.out.println("Mật khẩu không dấu, chứa ít nhất 1 chữ hoa, chữ thường, số,\n" +
+                        "kí tự đặc biệt, độ đài 8 - 15 kí tự");
+            }
+
         }
         String rePassword;
         while (true) {

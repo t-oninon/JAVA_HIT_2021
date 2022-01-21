@@ -1,5 +1,8 @@
 package model;
 
+import controller.AccountControl;
+import controller.CourseControl;
+
 public class Bill {
     private String courseId;
     private String accountId;
@@ -39,8 +42,19 @@ public class Bill {
         this.buyAt = buyAt;
     }
 
+    // Hàm hiển thị bill của 1 account
+    public String show() {
+        String nameOfCourse = CourseControl.findRecord(courseId).getName();
+        double priceOfCourse = CourseControl.findRecord(courseId).getPrice();
+        return String.format("|  %-5s  |  %-30s  |  %7.2f |  %-20s |", courseId, nameOfCourse, priceOfCourse, buyAt);
+    }
+
     @Override
     public String toString() {
-        return String.format("|  %-5s  |  %-5s  |  %-10s  |  %-20s |", " ", courseId, accountId, buyAt);
+        String nameOfCourse = CourseControl.findRecord(courseId).getName();
+        double priceOfCourse = CourseControl.findRecord(courseId).getPrice();
+        String nameOfAccount = AccountControl.findRecord(accountId).getFullName();
+        return String.format("|  %-5s  |  %-30s  |  %-10s  |  %-25s  |  %7.2f |  %-20s |",
+                courseId, nameOfCourse, accountId, nameOfAccount, priceOfCourse, buyAt);
     }
 }

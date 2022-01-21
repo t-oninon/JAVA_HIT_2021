@@ -14,6 +14,7 @@ public class JDBC {
         }
     }
 
+    // Hàm trả về một Connection nếu kết nối thành công vào cơ sở dữ liệu
     public static Connection getJDBCConnection() {
         final String url = "jdbc:sqlserver://localhost:1433;databaseName=QLKH;user=sa;password=123";
         try {

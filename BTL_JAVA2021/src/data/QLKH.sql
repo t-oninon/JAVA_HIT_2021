@@ -35,6 +35,7 @@ CREATE TABLE Lessons
     REFERENCES Courses(courseID),
 )
 
+
 GO
 CREATE TABLE Bills
 (
@@ -54,7 +55,8 @@ CREATE TABLE Rates
     courseID CHAR(5) NOT NULL,
     accountID CHAR(10) NOT NULL,
     rateValue DECIMAL(1) NOT NULL,
-    comment NVARCHAR(200) NOT NULL
+    comment NVARCHAR(300) NOT NULL,
+    reply NVARCHAR(300) NOT NULL
 	CONSTRAINT PK_Rate PRIMARY KEY (courseID, accountID),
     CONSTRAINT FK_Rates_courseID FOREIGN KEY (courseID)
     REFERENCES Courses(courseID),
@@ -92,53 +94,53 @@ INSERT INTO Bills VALUES
 ('C0005', 'AC00000005', '10/06/2021 14:05:16')
 
 INSERT INTO Rates VALUES
-('C0003', 'AC00000005', 3, N'Cảm ơn vì đã tạo ra khóa học này nhờ vậy mà tôi cảm thấy thích học SQL'),
-('C0003', 'AC00000006', 4, N'Nội dung bài dễ hiểu'),
-('C0004', 'AC00000005', 4, N'Mình thấy đây là 1 khóa học tuyệt vời, giải thích hầu hết dễ hiểu, các ví dụ, bài tập nhiều tha hồ làm "nhuyễn như cháo" :D'),
-('C0004', 'AC00000003', 4, N'Bạn nào học nhanh hoặc đã biết chút chút thì chừng 20h có thể học xong rồi. Xin cám ơn bạn mentor đã thiết kế ra 1 khóa học thật xịn, mình sẽ giới thiệu đến bạn bè cùng học.'),
-('C0004', 'AC00000006', 3, N'Cảm ơn vì đã tạo ra khóa học này'),
-('C0005', 'AC00000005', 5, N'Tôi thấy giá của nó khá rẻ so với lợi ích của nó, Tôi vẫn sẽ mua nó dù là miễn phí :)'),
-('C0005', 'AC00000004', 4, N'Tôi chưa mua khóa học nhưng cảm thấy nó khá hay, mở mang kiến thức'),
-('C0005', 'AC00000003', 3, N'Tôi đã tự học phần này nhưng nó khá khó, có lẽ tôi nên mua khóa học của OWBcode'),
-('C0005', 'AC00000002', 2, N'Thật tiếc khi tôi chưa mua nó'),
-('C0002', 'AC00000004', 5, N'Quyết định mua khóa học này của tôi thật đúng đắn, đáng đồng tiền, tôi sẽ tiếp tục đợi khóa học tiếp theo'),
-('C0002', 'AC00000003', 5, N'Giá như khóa học này rẻ hơn thì tôi sẽ cân nhắc để mua nó, có lẽ phải đợi đến khi nó giảm giá')
+('C0003', 'AC00000005', 3, N'Cảm ơn vì đã tạo ra khóa học này nhờ vậy mà tôi cảm thấy thích học SQL', N'Cảm ơn bạn đã sử dụng OWB, Chúng tôi cố sửa lỗi và cải thiện OWB để đem đến trải nghiệm tuyệt vời hơn nữa.'),
+('C0003', 'AC00000006', 4, N'Nội dung bài dễ hiểu', N'OWBcode đang trong thời kì phát triển, hãy giới thiệu bạn bè để học cùng nhé bạn.'),
+('C0004', 'AC00000005', 4, N'Mình thấy đây là 1 khóa học tuyệt vời, giải thích hầu hết dễ hiểu, các ví dụ, bài tập nhiều tha hồ làm "nhuyễn như cháo" :D', N'Cảm ơn đóng ý kiến đóng góp của bạn, chúng tôi sẽ cân nhắc để thây đổi trong đợt cập nhật tiếp theo.'),
+('C0004', 'AC00000003', 4, N'Bạn nào học nhanh hoặc đã biết chút chút thì chừng 20h có thể học xong rồi. Xin cám ơn bạn mentor đã thiết kế ra 1 khóa học thật xịn, mình sẽ giới thiệu đến bạn bè cùng học.', N''),
+('C0004', 'AC00000006', 3, N'Cảm ơn vì đã tạo ra khóa học này', N'Cảm ơn ý kiến của bạn, chúng tôi rất vui vì những bình luận như vậy, nó sẽ là động lực để chúng tôi nang cấp thêm những tính năng mới.'),
+('C0005', 'AC00000005', 5, N'Tôi thấy giá của nó khá rẻ so với lợi ích của nó, Tôi vẫn sẽ mua nó dù là miễn phí :)', N'Cảm ơn ý kiến đóng góp của bạn, chúng tôi sẽ cố gắng phát triển OWBcode để đem lại sự hài lòng cho bạn.'),
+('C0005', 'AC00000004', 4, N'Tôi chưa mua khóa học nhưng cảm thấy nó khá hay, mở mang kiến thức', N''),
+('C0005', 'AC00000003', 3, N'Tôi đã tự học phần này nhưng nó khá khó, có lẽ tôi nên mua khóa học của OWBcode', N'Cảm ơn bạn đã đánh giá, Hãy tiếp tục đồng hành cùng OWBcode để học những khóa học chất lượng nhé!'),
+('C0005', 'AC00000002', 2, N'Thật tiếc khi tôi chưa mua nó', N''),
+('C0001', 'AC00000004', 5, N'Quyết định mua khóa học này của tôi thật đúng đắn, đáng đồng tiền, tôi sẽ tiếp tục đợi khóa học tiếp theo', N''),
+('C0001', 'AC00000003', 4, N'Giá như khóa học này rẻ hơn thì tôi sẽ cân nhắc để mua nó, có lẽ phải đợi đến khi nó giảm giá', N'Cảm ơn bạn đã đóng góp ý kiến, chúng tôi sẽ cân nhắc trong đợt cập nhật sắp tới')
 
 GO
 
 INSERT INTO Lessons VALUES
-('LS00000001', 'C0001', N'Giới thiệu về cơ sở dữ liệu', 'https://codepro.io/sql/introdce'),
-('LS00000002', 'C0001', N'Khởi tạo', 'https://codepro.io/sql/create'),
-('LS00000003', 'C0001', N'Hiểu biết về những ràng buộc', 'https://codepro.io/sql/constraints'),
-('LS00000004', 'C0001', N'Sửa đổi dữ liệu', 'https://codepro.io/sql/updating'),
-('LS00000005', 'C0001', N'Lọc dữ liệu, truy vấn con', 'https://codepro.io/sql/seleting-subquery'),
-('LS00000006', 'C0001', N'Gộp nhiều bảng', 'https://codepro.io/sql/merge'),
-('LS00000007', 'C0002', N'Chương trình C đầu tiên', 'https://codepro.io/c/first-c-program'),
-('LS00000008', 'C0002', N'Biến', 'https://codepro.io/c/variable'),
-('LS00000009', 'C0002', N'Vòng lặp', 'https://codepro.io/c/loops'),
-('LS00000010', 'C0002', N'Câu lệnh điều khiển', 'https://codepro.io/c/selection'),
-('LS00000011', 'C0002', N'Mảng và chuỗi', 'https://codepro.io/c/array-and-string'),
-('LS00000012', 'C0002', N'Hàm trong C', 'https://codepro.io/c/funtion'),
-('LS00000013', 'C0003', N'Xử lý sâu, Số học', 'https://codepro.io/NumericalAndString'),
-('LS00000014', 'C0003', N'Đếm, Ma trận', 'https://codepro.io/CountingAndMatrix'),
-('LS00000015', 'C0003', N'Hình học, Dãy số', 'https://codepro.io/Geometry-Sequence'),
-('LS00000016', 'C0003', N'Một số loại đồ thị', 'https://codepro.io/Graph'),
-('LS00000017', 'C0003', N'Sắp xếp và tìm kiếm', 'https://codepro.io/SortingAndSearching'),
-('LS00000018', 'C0004', N'Tổng quan', 'https://codepro.io/java/Overview'),
-('LS00000019', 'C0004', N'Biến và kiểu dữ liệu', 'https://codepro.io/java/variables'),
-('LS00000020', 'C0004', N'Câu lệnh rẽ nhánh', 'https://codepro.io/java/selection'),
-('LS00000021', 'C0004', N'Vòng lặp', 'https://codepro.io/java/Loops'),
-('LS00000022', 'C0004', N'Phương thức', 'https://codepro.io/java/Method'),
-('LS00000023', 'C0005', N'Lớp và đối tượng', 'https://codepro.io/oopJava/classes'),
-('LS00000024', 'C0005', N'Phương thức và biến static', 'https://codepro.io/oopJava/static'),
-('LS00000025', 'C0005', N'Tính đóng gói - Encapsulation', 'https://codepro.io/oopJava/encapsulation'),
-('LS00000026', 'C0005', N'Tính kế thừa - Inheritance', 'https://codepro.io/oopJava/inheritance'),
-('LS00000027', 'C0005', N'Tính đa hình, trừu tượng', 'https://codepro.io/oopJava/polyAndAbstract'),
-('LS00000028', 'C0005', N'Quan hệ kết tập(HAS-A)', 'https://codepro.io/oopJava/hasa-relationship')
+('LS00000001', 'C0001', N'Giới thiệu về cơ sở dữ liệu', 'https://owbcode.io/sql/introdce'),
+('LS00000002', 'C0001', N'Khởi tạo', 'https://owbcode.io/sql/create'),
+('LS00000003', 'C0001', N'Hiểu biết về những ràng buộc', 'https://owbcode.io/sql/constraints'),
+('LS00000004', 'C0001', N'Sửa đổi dữ liệu', 'https://owbcode.io/sql/updating'),
+('LS00000005', 'C0001', N'Lọc dữ liệu, truy vấn con', 'https://owbcode.io/sql/seleting-subquery'),
+('LS00000006', 'C0001', N'Gộp nhiều bảng', 'https://owbcode.io/sql/merge'),
+('LS00000007', 'C0002', N'Chương trình C đầu tiên', 'https://owbcode.io/c/first-c-program'),
+('LS00000008', 'C0002', N'Biến', 'https://owbcode.io/c/variable'),
+('LS00000009', 'C0002', N'Vòng lặp', 'https://owbcode.io/c/loops'),
+('LS00000010', 'C0002', N'Câu lệnh điều khiển', 'https://owbcode.io/c/selection'),
+('LS00000011', 'C0002', N'Mảng và chuỗi', 'https://owbcode.io/c/array-and-string'),
+('LS00000012', 'C0002', N'Hàm trong C', 'https://owbcode.io/c/funtion'),
+('LS00000013', 'C0003', N'Xử lý sâu, Số học', 'https://owbcode.io/NumericalAndString'),
+('LS00000014', 'C0003', N'Đếm, Ma trận', 'https://owbcode.io/CountingAndMatrix'),
+('LS00000015', 'C0003', N'Hình học, Dãy số', 'https://owbcode.io/Geometry-Sequence'),
+('LS00000016', 'C0003', N'Một số loại đồ thị', 'https://owbcode.io/Graph'),
+('LS00000017', 'C0003', N'Sắp xếp và tìm kiếm', 'https://owbcode.io/SortingAndSearching'),
+('LS00000018', 'C0004', N'Tổng quan', 'https://owbcode.io/java/Overview'),
+('LS00000019', 'C0004', N'Biến và kiểu dữ liệu', 'https://owbcode.io/java/variables'),
+('LS00000020', 'C0004', N'Câu lệnh rẽ nhánh', 'https://owbcode.io/java/selection'),
+('LS00000021', 'C0004', N'Vòng lặp', 'https://owbcode.io/java/Loops'),
+('LS00000022', 'C0004', N'Phương thức', 'https://owbcode.io/java/Method'),
+('LS00000023', 'C0005', N'Lớp và đối tượng', 'https://owbcode.io/oopJava/classes'),
+('LS00000024', 'C0005', N'Phương thức và biến static', 'https://owbcode.io/oopJava/static'),
+('LS00000025', 'C0005', N'Tính đóng gói - Encapsulation', 'https://owbcode.io/oopJava/encapsulation'),
+('LS00000026', 'C0005', N'Tính kế thừa - Inheritance', 'https://owbcode.io/oopJava/inheritance'),
+('LS00000027', 'C0005', N'Tính đa hình, trừu tượng', 'https://owbcode.io/oopJava/polyAndAbstract'),
+('LS00000028', 'C0005', N'Quan hệ kết tập(HAS-A)', 'https://owbcode.io/oopJava/hasa-relationship')
 
 SELECT * FROM Accounts
-SELECT * FROM Courses
 SELECT * FROM Bills
+SELECT * FROM Courses
 SELECT * FROM Lessons
 SELECT * FROM Rates
 

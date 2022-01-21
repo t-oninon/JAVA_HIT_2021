@@ -1,6 +1,5 @@
 package controller;
 
-import model.Bill;
 import model.Rate;
 
 import java.sql.ResultSet;
@@ -15,7 +14,8 @@ public class RateControl {
                 "('"+rate.getCourseId()+"'," +
                 "'"+rate.getAccountId()+"'," +
                 ""+rate.getRateValue()+", " +
-                "N'"+rate.getComment()+"')";
+                "N'"+rate.getComment()+"', " +
+                "N'"+rate.getReply()+"')";
         try {
             JDBC.statement.executeUpdate(sqlInsert);
         } catch (SQLException e) {
@@ -26,7 +26,7 @@ public class RateControl {
     // Hàm cập nhật một bản ghi của bảng Rates trong DataBase
     public static void updateRecord(Rate rate) {
         String sqlUpdate = "update Rates set " +
-                "rateValue = "+rate.getRateValue()+", comment = N'"+rate.getComment()+"'" +
+                "rateValue = "+rate.getRateValue()+", comment = N'"+rate.getComment()+"', reply = N'"+rate.getReply()+"'" +
                 " where courseID = '"+rate.getCourseId()+"' and accountID ='"+rate.getAccountId()+"'";
         try {
             JDBC.statement.executeUpdate(sqlUpdate);
@@ -55,7 +55,8 @@ public class RateControl {
                         resultSet.getString(1),
                         resultSet.getString(2),
                         resultSet.getInt(3),
-                        resultSet.getString(4)
+                        resultSet.getString(4),
+                        resultSet.getString(5)
             );
         } catch (SQLException e) {
             e.printStackTrace();
@@ -74,7 +75,8 @@ public class RateControl {
                         resultSet.getString(1),
                         resultSet.getString(2),
                         resultSet.getInt(3),
-                        resultSet.getString(4)
+                        resultSet.getString(4),
+                        resultSet.getString(5)
                 );
                 rates.add(rate);
             }
@@ -95,7 +97,8 @@ public class RateControl {
                         resultSet.getString(1),
                         resultSet.getString(2),
                         resultSet.getInt(3),
-                        resultSet.getString(4)
+                        resultSet.getString(4),
+                        resultSet.getString(5)
                 );
                 rates.add(rate);
             }
@@ -116,7 +119,8 @@ public class RateControl {
                         resultSet.getString(1),
                         resultSet.getString(2),
                         resultSet.getInt(3),
-                        resultSet.getString(4)
+                        resultSet.getString(4),
+                        resultSet.getString(5)
                 );
                 rates.add(rate);
             }

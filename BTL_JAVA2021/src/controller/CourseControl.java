@@ -1,8 +1,6 @@
 package controller;
 
-import model.Account;
 import model.Course;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,7 +14,7 @@ public class CourseControl {
                 "('"+course.getId()+"'," +
                 "N'"+course.getName()+"'," +
                 ""+course.getPrice()+"," +
-                "'"+course.getIntroduce()+"')";
+                "N'"+course.getIntroduce()+"')";
         try {
             JDBC.statement.executeUpdate(sqlInsert);
         } catch (SQLException e) {
@@ -47,6 +45,25 @@ public class CourseControl {
         }
     }
 
+    // Hàm xóa một bản ghi trong của bảng Accounts dựa vào id trong DataBase
+    public static Course findRecord(String id) {
+        String sqlFind = "select * from Courses where courseID = '"+id+"'";
+        try {
+            ResultSet resultSet = JDBC.statement.executeQuery(sqlFind);
+            if (resultSet.next()) {
+                return new Course(
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getDouble(3),
+                        resultSet.getString(4)
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     // Hàm trả về 1 List<Account> khi đọc toàn bộ thông tin từ bảng Accounts trong DataBase
     public static List<Course> readAllRecord() {
         List<Course> courses = new ArrayList<>();
@@ -68,6 +85,7 @@ public class CourseControl {
         return courses;
     }
 
+    // Hàm trả về 1 List<Account> khi đọc toàn bộ thông tin từ bảng Accounts trong DataBase với điều kiện
     public static List<Course> readByCondition(String accountID ,boolean isMyCourse) {
         List<Course> courses = new ArrayList<>();
         String sqlSelect;
@@ -97,5 +115,4 @@ public class CourseControl {
         }
         return courses;
     }
-
 }
