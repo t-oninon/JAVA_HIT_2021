@@ -58,13 +58,13 @@ public class AccountControl {
             ResultSet resultSet = JDBC.statement.executeQuery(sqlSelect);
             while (resultSet.next()) {
                 Account account = new Account(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(3),
-                    resultSet.getString(4).equals("1"),
-                    resultSet.getString(5),
-                    resultSet.getDouble(6),
-                    resultSet.getString(7)
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4).equals("1"),
+                        resultSet.getString(5),
+                        resultSet.getDouble(6),
+                        resultSet.getString(7)
                 );
                 accounts.add(account);
             }
@@ -112,16 +112,10 @@ public class AccountControl {
         while (true) {
             System.out.print("\tNhập tên tài khoản: ");
             userName = Base.sc.nextLine();
-            boolean notBreak = false;
-            if(RunMain.accountJoin.getAdmin() && userName.length() == 0) {
-                System.out.println("Tên tài khoản không được để trống");
-                notBreak = true;
-            }
-            if (Constants.regexUserName.matcher(userName).find() || RunMain.accountJoin.getAdmin() && !notBreak)
+
+            if (Constants.regexUserName.matcher(userName).find())
                 break;
-            if(!RunMain.accountJoin.getAdmin())
-                System.out.println("Tên tài khoản không dấu, chứa các kí tự hoa, thường, số,\n" +
-                    "độ đài 8 - 15 kí tự");
+            System.out.println("Tên tài khoản không dấu, chứa các kí tự hoa, thường, số,\n" + "độ đài 8 - 15 kí tự");
         }
         return userName;
     }
@@ -132,17 +126,10 @@ public class AccountControl {
         while (true) {
             System.out.print("\tNhập mật khẩu: ");
             password = Base.sc.nextLine();
-            boolean notBreak = false;
-            if(RunMain.accountJoin.getAdmin() && password.length() == 0) {
-                System.out.println("Mật khẩu không được để trống");
-                notBreak = true;
-            }
-            if (Constants.regexPassword.matcher(password).find() || RunMain.accountJoin.getAdmin() && !notBreak)
+            if (Constants.regexPassword.matcher(password).find())
                 break;
-            if (!RunMain.accountJoin.getAdmin()) {
-                System.out.println("Mật khẩu không dấu, chứa ít nhất 1 chữ hoa, chữ thường, số,\n" +
-                        "kí tự đặc biệt, độ đài 8 - 15 kí tự");
-            }
+            System.out.println("Mật khẩu không dấu, chứa ít nhất 1 chữ hoa, chữ thường, số,\n" +
+                    "kí tự đặc biệt, độ đài 8 - 15 kí tự");
 
         }
         String rePassword;
