@@ -16,7 +16,7 @@ public class Base {
     public static String author = "Nguyễn Trung Thành";
     public static String dateEstablish = "01/01/2022";
     public static String address = "Mọi nơi khi bạn kết nối internet";
-    public static String hotline = "0987 112 345";
+    public static String hotline = "0981 811 655";
     public static String email = "t.onion.2002@gmail.com";
 
     public static List<Course> courses = CourseControl.readAllRecord();
